@@ -19,8 +19,11 @@ function getHashCode(str,caseSensitive){
 function loopy()
 {
 var sword;
-while(getHashCode(sword)!="527647021")
-{sword=prompt("请输入密码登录");}
+while(sword!="527647021")
+{
+  sword=prompt("请输入密码登录");
+  sword=getHashCode(sword);
+}
 alert("登录成功");
 }
 loopy()
