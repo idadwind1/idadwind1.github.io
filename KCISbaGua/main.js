@@ -16,7 +16,7 @@ while(sword!="527647021")
 {
   sword=prompt("请输入密码登录");
   if (sword==null)
-  {window.location.("about:blank");}
+  {location.href("about:blank");}
   sword=getHashCode(sword);
   if (sword!="527647021")
   {alert("密码错误");}
