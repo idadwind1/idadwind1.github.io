@@ -23,7 +23,7 @@
     {
       sword=prompt("请输入密码登录");
       if (sword==null)
-      {window.location.href("about:blank");}
+      {location.href='about:blank';}
       sword=getHashCode(sword);
       console.log("input password hash: " + sword);
       if (sword!="527647021")
