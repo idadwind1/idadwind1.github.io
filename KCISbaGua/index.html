@@ -17,8 +17,9 @@
   }
   function password()
   {
-  var sword;
-  while(sword!="1713842097")
+    var sword;
+    var logTimes;
+  while(sword!="1713842097" && logTimes!=3)
     {
       sword=prompt("请输入密码登录");
       if (sword==null)
@@ -27,6 +28,7 @@
       console.log("input password hash: " + sword);
       if (sword!="1713842097")
       {alert("密码错误");}
+      logTimes++;
     }
     alert("登录成功");
     document.title = '康桥八卦论坛';
