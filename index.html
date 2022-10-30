@@ -1,15 +1,25 @@
 <head>
   <script>
     function fnc(){
-      var img = document.getElementById("gui");
-      img.width = img.width * 1.5;
-      img.height = img.height * 1.5;
+	  var img = document.getElementById("gui");
+      img.width = img.width * 1.25;
+      img.height = img.height * 1.25;
     }
     window.onload = function(){
-      for (i = 0;i < 10;i++){
-        setTimeout(fnc,300);
-      }
+	  var img = document.getElementById("gui");
+	  img.width = img.width / 1.5;
+	  img.height = img.height / 1.5;
+	  img.style.visibility = 'hidden';
+	  setTimeout(mainf,3000);
     }
+	function mainf(){
+	  var img = document.getElementById("gui");
+	  img.style.visibility = 'visible';
+	  fnc();
+      for (i = 0;i < 5;i++){
+        setTimeout(fnc,100);
+      }
+	}
   </script>
 </head>
 <body bgcolor="black">
