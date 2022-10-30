@@ -1,11 +1,14 @@
 <head>
   <script>
-    window.onload = function(){
-      for (i = 0;i < 10;i++)
+    function fnc(){
       var img = document.getElementById("gui");
       img.width = img.width * 1.5;
       img.height = img.height * 1.5;
-      sleep(500);
+    }
+    window.onload = function(){
+      for (i = 0;i < 10;i++){
+        setTimeout(fnc,300);
+      }
     }
   </script>
 </head>
