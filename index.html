@@ -5,26 +5,19 @@
   }
   </style>
   <script>
-    function fnc(){
-	  var img = document.getElementById("gui");
-      img.width = img.width * 1.25;
-      img.height = img.height * 1.25;
-    }
-    window.onload = function(){
-	  var img = document.getElementById("gui");
-	  img.width = img.width / 1.5;
-	  img.height = img.height / 1.5;
-	  img.style.visibility = 'hidden';
-	  setTimeout(mainf,7000);
-    }
-	function mainf(){
-	  var img = document.getElementById("gui");
-	  img.style.visibility = 'visible';
-	  fnc();
-      for (i = 0;i < 5;i++){
-        setTimeout(fnc,100);
-      }
-	}
+  window.onload = function(){
+  	var img = document.getElementById("gui");
+  	img.width = img.width / 1.5;
+  	img.height = img.height / 1.5;
+  	img.style.visibility = 'hidden';
+  	setTimeout(mainf,7000);
+  }
+  function mainf(){
+  	var img = document.getElementById("gui");
+  	img.style.visibility = 'visible';
+  	img.width = img.width * 2.5;
+  	img.height = img.height * 2.5;
+  }
   </script>
 </head>
 <body bgcolor="black">
