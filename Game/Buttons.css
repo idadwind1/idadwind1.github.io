@@ -1,4 +1,4 @@
-.button {
+.submit_button {
 	border-radius: 5px;
     background-color: #4CAF50; /* Green */
     border: none;
@@ -14,13 +14,13 @@
     transition-duration: 0.4s;
     cursor: pointer;
 }
-.button1 {
+.submit_button1 {
     background-color: white; 
     color: black; 
     border: 2px solid #4CAF50;
 }
  
-.button1:hover {
+.submit_button1:hover {
     background-color: #4CAF50;
     color: white;
     box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
@@ -53,7 +53,7 @@
     box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
 }
 
-.normal_button {
+.button {
 	border-radius: 5px;
     background-color: #808080; /* Gray */
     border: none;
@@ -70,13 +70,13 @@
     cursor: pointer;
 }
 
-.normal_button1 {
+.button1 {
     background-color: white; 
     color: black;
     border: 2px solid #808080;
 }
  
-.normal_button1:hover {
+.button1:hover {
     background-color: #808080;
     color: white;
     box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);

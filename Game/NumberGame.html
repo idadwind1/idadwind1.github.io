@@ -2,7 +2,7 @@
 <head>
 <title>Digital Offset Game</title>
 <script src="Scripts.js"></script>
-<script src="/jquery.min.js"></script>
+<script src="jquery.min.js"></script>
 <script>
 	if (matchMedia('(prefers-color-scheme: dark)').matches) {
 		$("body").addClass("night");
@@ -13,6 +13,7 @@
 </script>
 <link rel="icon" href="icon.ico" type="image/x-icon">
 <link rel="stylesheet" type="text/css" href="Buttons.css">
+<link rel="stylesheet" type="text/css" href="Style.css">
 <style>
 	.title {
 		font-size: 36px
@@ -33,9 +34,9 @@
 </div>
 <br>
 <div name="controls" align="center">
-	<input onclick="submit()" type="submit" name="Submit" value="Submit" class="button button1">
+	<input onclick="submit()" type="submit" name="Submit" value="Submit" class="submit_button submit_button1">
 	<input onclick="reset()" type="reset" name="Reset" value="Reset" class="reset_button reset_button1">
-	<input onclick="switch_color_scheme()" type="submit" name="DarkOrLight" value="Switch Color Scheme" class="normal_button normal_button1">
+	<input onclick="switch_color_scheme()" type="submit" name="DarkOrLight" value="Switch Color Scheme" class="button button1">
 </div>
 </body>
 </html>
