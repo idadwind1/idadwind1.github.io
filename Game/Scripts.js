@@ -21,3 +21,9 @@ function submit(){
 		
 	}
 }
+function switch_color_scheme(){
+	if ($("body").hasClass("night"))
+		$("body").removeClass("night");
+	else
+		$("body").addClass("night");
+}

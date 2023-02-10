@@ -2,6 +2,15 @@
 <head>
 <title>Digital Offset Game</title>
 <script src="Scripts.js"></script>
+<script src="/jquery.min.js"></script>
+<script>
+	if (matchMedia('(prefers-color-scheme: dark)').matches) {
+		$("body").addClass("night");
+	}
+	else if (matchMedia('(prefers-color-scheme: light)').matches) {
+		$("body").removeClass("night");
+	}
+</script>
 <link rel="icon" href="icon.ico" type="image/x-icon">
 <link rel="stylesheet" type="text/css" href="Buttons.css">
 <style>
