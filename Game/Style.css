@@ -23,19 +23,18 @@
 /*buttons*/
 .buttons {
 	border-radius: 5px;
-    height: 30px;
-    font-size: 16px;
-    margin: 4px 2px;
+	height: 30px;
+	font-size: 16px;
 	/* Firefox 4 */
 	-moz-transition-duration:0.5s;
 	/* Safari and Chrome */
 	-webkit-transition-duration:0.5s;
 	/* Opera */
 	-o-transition-duration:0.5s;
-    transition-duration: 0.5s;
-    cursor: pointer;
-    background-color: white; 
-    color: black;
+	transition-duration: 0.5s;
+	cursor: pointer;
+	background-color: white;
+	color: black;
 }
 .night .buttons {	
     background-color: #424242;
@@ -69,5 +68,21 @@
 
 /*checkboxes&radioboxes*/
 .checkbox{
-	
+	padding: 1px 6px 1px 0px;
+	display: inline-block;
+	border-radius: 5px;
+	font-size: 16px;
+	/* Firefox 4 */
+	-moz-transition-duration:0.5s;
+	/* Safari and Chrome */
+	-webkit-transition-duration:0.5s;
+	/* Opera */
+	-o-transition-duration:0.5s;
+	transition-duration: 0.5s;
+	cursor: pointer;
+    border: 2px solid gray;
+	height: 25.4;
+}
+.checkbox:hover {
+    background-color: gray;
 }
