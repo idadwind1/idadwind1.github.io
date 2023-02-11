@@ -81,7 +81,7 @@
 	transition-duration: 0.5s;
 	cursor: pointer;
     border: 2px solid gray;
-	height: 25.4;
+	height: 24.8;
 }
 .checkbox:hover {
     background-color: gray;
