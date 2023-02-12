@@ -19,26 +19,30 @@ function init_labels(numbers = 7){
 	}
 }
 $(document).ready(function(){
-  $("#SwitchColorScheme").click(function(){
-	if ($("body").hasClass("night")){
-		$("body").removeClass("night");
-		$("#SwitchColorScheme").val("Dark Mode");
-	}
-	else{
-		$("body").addClass("night");
-		$("#SwitchColorScheme").val("Light Mode");
-	}
-  });
-  $("#Submit").click(function(){
-	if (sum == 0 && selected != 0){
-		score++;
-	}
-	else if (selected != 0){
-		gameover = true;
-		if (sum==0) gameover_text = "equals" + sum + " and it's not equals to 0"
-	}
-  });
-  $("#Reset").click(function(){
-	init_labels(label);
-  });
+	$("#SwitchColorScheme").click(function(){
+		if ($("body").hasClass("night")){
+			$("body").removeClass("night");
+			$("#SwitchColorScheme").val("Dark Mode");
+		}
+		else{
+			$("body").addClass("night");
+			$("#SwitchColorScheme").val("Light Mode");
+		}
+	});
+	$("#Submit").click(function(){
+		if (sum == 0 && selected != 0){
+			score++;
+		}
+		else if (selected != 0){
+			gameover = true;
+			if (sum==0) gameover_text = "equals" + sum + " and it's not equals to 0"
+		}
+	});
+	$("#Reset").click(function(){
+		init_labels(label);
+	});
+	$("#ShowSum").click(function() {
+		if ($("#sum_text").hasClass("hide")) $("#sum_text").removeClass("hide");
+		else $("#sum_text").addClass("hide");
+	});
 });
