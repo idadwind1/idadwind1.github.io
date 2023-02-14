@@ -5,8 +5,7 @@ var score = 0;
 var gameover = false;
 var gameover_text = "";
 var numbers_l = [];
-function init_label(){
-	i = parseInt(Math.random()*19-9,10);
+function init_label(i){
 	if (i<0) return "(" + i.toString() + ")";
 	if (i==0) return "(+0)";
 	return "(+" + i.toString() + ")";
@@ -16,13 +15,13 @@ function numberbuttons_clicked(){
 		$(this).removeClass("submit_button");
 		$(this).addClass("button");
 		selected--;
-		sum -= numbers_l[parseInt($(this).attr('id'))];
+		sum -= numbers_l[parseInt($(this).attr('id'))-1];
 	}
 	else {
 		$(this).addClass("submit_button");
 		$(this).removeClass("button");
 		selected++;
-		sum += numbers_l[parseInt($(this).attr('id'))];
+		sum += numbers_l[parseInt($(this).attr('id'))-1];
 	}
 }
 function init_labels(numbers = 7){
@@ -30,9 +29,9 @@ function init_labels(numbers = 7){
 	selected = 0;
 	$("#numbers").empty();
 	for (var i = 0; i < numbers; i++){
-		n = init_label();
+		n = parseInt(Math.random()*19-9,10);
 		numbers_l.push(n)
-		$("#numbers").append("<input type=\"button\" id=\"" + (i+1).toString() + "\" value=\"" + n + "\" class=\"buttons button numberbuttons\">");
+		$("#numbers").append("<input type=\"button\" id=\"" + (i+1).toString() + "\" value=\"" + init_label(n) + "\" class=\"buttons button numberbuttons\">");
 	}
 	$(".numberbuttons").bind("click", numberbuttons_clicked);
 }
