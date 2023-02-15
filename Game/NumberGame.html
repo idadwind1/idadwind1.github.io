@@ -1,33 +1,33 @@
 <html>
-<head>
-<title>Digital Offset Game</title>
-<script src="jquery.min.js"></script>
-<script src="Scripts.js"></script>
-<link rel="icon" href="icon.ico" type="image/x-icon">
-<link rel="stylesheet" type="text/css" href="Style.css">
-</head>
-<body style="user-select:none">
-<div id="titles" align="center">
-	<span class="title">Digital Offset Game</span>
-	<br>
-	<span class="subtitle">By Idad Wind</span>
-</div>
-<br>
-<div id="numbers" align="center">
-</div>
-<br>
-<div name="controls" align="center">
-	<input type="submit" id="Submit" value="Submit" class="buttons submit_button">
-	<input type="reset" id="Reset" value="Reset" class="buttons reset_button">
-	<input type="submit" id="SwitchColorScheme" value="Dark Mode" class="buttons button">
-	<label for="ShowSum" class="checkbox buttons">
-		<input type="checkbox" id="ShowSum" style="cursor: pointer">
-		<span style="cursor: pointer">Show Sum</span>
-	</label>
-</div>
-<div id="infomations" align="center">
-	<span class="text">Score: <span class="data" id="score_span">0</span></span>
-	<span class="text hide" id="sum_text">&nbsp;Sum: <span class="data" id="sum_span">0</span></span>
-</div>
-</body>
+	<head>
+		<title>Digital Offset Game</title>
+		<script src="jquery.min.js"></script>
+		<script src="Scripts.js"></script>
+		<link rel="icon" href="icon.ico" type="image/x-icon">
+		<link rel="stylesheet" type="text/css" href="Style.css">
+	</head>
+	<body style="user-select:none">
+		<div id="titles" align="center">
+			<span class="title">Digital Offset Game</span>
+			<br>
+			<span class="subtitle">By Idad Wind</span>
+		</div>
+		<br>
+		<div id="numbers" align="center" class="trans">
+		</div>
+		<br>
+		<div name="controls" align="center" class="trans">
+			<input type="submit" id="Submit" value="Submit" class="buttons submit_button">
+			<input type="reset" id="Reset" value="Reset" class="buttons reset_button">
+			<input type="submit" id="SwitchColorScheme" value="Dark Mode" class="buttons">
+			<label for="ShowSum" class="checkbox buttons">
+				<input type="checkbox" id="ShowSum" style="cursor: pointer">
+				<span style="cursor: pointer">Show Sum</span>
+			</label>
+		</div>
+		<div id="infomations" align="center" class="trans">
+			<span class="text">Score: <span class="data" id="score_span">0</span></span>
+			<span class="text hide" id="sum_text">&nbsp;Sum: <span class="data" id="sum_span" style="color:red">None</span></span>
+		</div>
+	</body>
 </html>
