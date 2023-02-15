@@ -6,6 +6,64 @@ var gameover = false;
 var gameover_text = "";
 var numbers_l = [];
 var selected_numbers = [];
+function PermutationCombinations(things, countInOneGroup)
+{
+	result = [];
+	if (countInOneGroup == 1)
+	{
+		for (let i of things)
+		{
+			result.push([ things[i] ]);
+		}
+		return result;
+	}
+	for (let i of things)
+	{
+		for (let j of things)
+		{
+			if (i >= j) continue;
+			result.push([ i, j ]);
+		}
+	}
+	if (countInOneGroup != 2)
+	{
+		tmp = [];
+		tmp.concat(result);
+		result = [];
+		for (let i = 0; i < tmp.length; i++)
+		{
+			tmp2 = [ -114514 ];
+			for (let j = 2; j < things.length; j++) tmp2.push(things[j]);
+			ls = PermutationCombinations(tmp2, countInOneGroup - 1);
+			for (let j = 0; j < ls.length; j++)
+			{
+				if (!ls[j].includes(-114514) || ls[j][1] <= tmp[i][1]) continue;
+				tmp3 = 
+				[
+					tmp[i][0],
+					tmp[i][1]
+				];
+				for (let l of ls[j]) if (l != -114514) tmp3.push(l);
+				result.push(tmp3);
+			}
+		}
+	}
+	return result;
+}
+function get_ok_group() {
+	var res = [];
+	for (let i = 1; i <= numbers_l.length; i++) {
+		var PC = PermutationCombinations(numbers_l,i);
+		for (let j of PC) {
+			var j_sum = 0;
+			for (let k of j) j_sum += k;
+			if (j_sum == 0){
+				res.push(j);
+			}
+		}
+	}
+	return res;
+}
 function update_sum(value) {
 	sum = value;
 	if (selected == 0){
@@ -75,10 +133,10 @@ $(document).ready(function(){
 			update_score(score + 1);
 			selected = 0;
 			update_sum(0);
-			for (i = 0; i < selected_numbers.length; i++){
-				numbers_l[parseInt(selected_numbers[i])-1] = parseInt(Math.random()*19-9,10);
-				$("#" + selected_numbers[i]).val(init_label(numbers_l[parseInt(selected_numbers[i])-1]));
-				$("#" + selected_numbers[i]).removeClass("submit_button");
+			for (let i of selected_numbers) {
+				numbers_l[parseInt(i)-1] = parseInt(Math.random()*19-9,10);
+				$("#" + i).val(init_label(numbers_l[parseInt(i)-1]));
+				$("#" + i).removeClass("submit_button");
 			}
 		}
 		else if (selected != 0){
