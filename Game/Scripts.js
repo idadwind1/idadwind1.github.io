@@ -5,23 +5,31 @@ var score = 0;
 var gameover = false;
 var gameover_text = "";
 var numbers_l = [];
-function init_label(i){
-	if (i<0) return "(" + i.toString() + ")";
-	if (i==0) return "(+0)";
-	return "(+" + i.toString() + ")";
+function update_sum(value) {
+	sum = value;
+	$("#sum_span").text(sum);
+}
+function update_score(value) {
+	score = value;
+	$("#score_span").text(score);
+}
+function init_label(n){
+	if (n<0) return "(" + n + ")";
+	if (n==0) return "(+0)";
+	return "(+" + n + ")";
 }
 function numberbuttons_clicked(){
 	if ($(this).hasClass("submit_button")){
 		$(this).removeClass("submit_button");
 		$(this).addClass("button");
 		selected--;
-		sum -= numbers_l[parseInt($(this).attr('id'))-1];
+		update_sum(sum - numbers_l[parseInt($(this).attr('id'))-1]);
 	}
 	else {
 		$(this).addClass("submit_button");
 		$(this).removeClass("button");
 		selected++;
-		sum += numbers_l[parseInt($(this).attr('id'))-1];
+		update_sum(sum + numbers_l[parseInt($(this).attr('id'))-1]);
 	}
 }
 function init_labels(numbers = 7){
@@ -31,7 +39,7 @@ function init_labels(numbers = 7){
 	for (var i = 0; i < numbers; i++){
 		n = parseInt(Math.random()*19-9,10);
 		numbers_l.push(n)
-		$("#numbers").append("<input type=\"button\" id=\"" + (i+1).toString() + "\" value=\"" + init_label(n) + "\" class=\"buttons button numberbuttons\">");
+		$("#numbers").append("<input type=\"button\" id=\"" + (i+1) + "\" value=\"" + init_label(n) + "\" class=\"buttons button numberbuttons\">");
 	}
 	$(".numberbuttons").bind("click", numberbuttons_clicked);
 }
@@ -49,7 +57,9 @@ $(document).ready(function(){
 	});
 	$("#Submit").click(function(){
 		if (sum == 0 && selected != 0){
-			score++;
+			update_score(score + 1);
+			selected = 0;
+			update_sum(0);
 		}
 		else if (selected != 0){
 			gameover = true;
