@@ -45,9 +45,11 @@ function numberbuttons_clicked(){
 	}
 }
 function init_labels(numbers = 7){
-	sum = 0;
 	selected = 0;
+	update_score(0);
 	selected_numbers = [];
+	update_sum(0);
+	numbers_l = [];
 	$("#numbers").empty();
 	for (var i = 0; i < numbers; i++){
 		n = parseInt(Math.random()*19-9,10);
