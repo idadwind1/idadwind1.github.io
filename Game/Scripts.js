@@ -51,14 +51,20 @@ function PermutationCombinations(things, countInOneGroup)
 	return result;
 }
 function get_ok_group() {
-	var res = [];
-	for (let i = 1; i <= numbers_l.length; i++) {
-		var PC = PermutationCombinations(numbers_l,i);
-		for (let j of PC) {
-			var j_sum = 0;
-			for (let k of j) j_sum += k;
+	res = [];
+	for (let i of numbers_l) {
+		ls = PermutationCombinations(Array.from({length: label}, (val, i) => i),i);
+		for (let j of ls) {
+			j_sum = 0;
+			for (let k of j) {
+				j_sum += numbers_l[k];
+			}
 			if (j_sum == 0){
-				res.push(j);
+				tmp = [];
+				for (let k of j) {
+					tmp.push(init_label(numbers_l[k]));
+				}
+				res.push(tmp);
 			}
 		}
 	}
@@ -139,9 +145,25 @@ $(document).ready(function(){
 				$("#" + i).removeClass("submit_button");
 			}
 		}
-		else if (selected != 0){
+		else if (selected == 0) {
+			
+		}
+		else{
 			gameover = true;
-			if (sum==0) gameover_text = "equals" + sum + " and it's not equals to 0"
+			if (sum!=0){
+				var polynomial = "";
+				for (let i of selected_numbers) {
+					polynomial += $("#" + i).val();
+					if (i != selected_numbers[selected_numbers.length - 1]) {
+						polynomial += "+";
+					}
+				}
+				gameover_text = polynomial + " equals to " + sum + " and it's not equals to 0";
+			}
+			$("#numbers").addClass("hide");
+			$("#Submit").addClass("hide");
+			$("#ShowSum").addClass("hide");
+			$("#SwitchColorScheme").addClass("hide");
 		}
 	});
 	$("#Reset").click(function(){
