@@ -5,31 +5,12 @@ var score = 0;
 var gameover = false;
 var gameover_text = "";
 var numbers_l = [];
-var selected_numbers = [];
+var selected_numbers = new Set();
 function PermutationCombinations(things, countInOneGroup)
 {
 	result = [];
-	if (countInOneGroup == 1)
-	{
-		for (let i of things)
-		{
-			result.push([ things[i] ]);
-		}
-		return result;
-	}
-	for (let i of things)
-	{
-		for (let j of things)
-		{
-			if (i >= j) continue;
-			result.push([ i, j ]);
-		}
-	}
 	if (countInOneGroup != 2)
 	{
-		tmp = [];
-		tmp.concat(result);
-		result = [];
 		for (let i = 0; i < tmp.length; i++)
 		{
 			tmp2 = [ -114514 ];
@@ -47,13 +28,30 @@ function PermutationCombinations(things, countInOneGroup)
 				result.push(tmp3);
 			}
 		}
+		return result;
+	}
+	if (countInOneGroup == 1)
+	{
+		for (let i of things)
+		{
+			result.push([ things[i] ]);
+		}
+		return result;
+	}
+	for (let i of things)
+	{
+		for (let j of things)
+		{
+			if (i >= j) continue;
+			result.push([ i, j ]);
+		}
 	}
 	return result;
 }
 function get_ok_group() {
 	res = [];
-	for (let i of numbers_l) {
-		ls = PermutationCombinations(Array.from({length: label}, (val, i) => i),i);
+	for (let i = 1; i < numbers_l.length; i++) {
+		ls = PermutationCombinations(Array.from({length: label}, (val, j) => j),i);
 		for (let j of ls) {
 			j_sum = 0;
 			for (let k of j) {
@@ -97,21 +95,22 @@ function init_label(n){
 function numberbuttons_clicked(){
 	if ($(this).hasClass("submit_button")){
 		$(this).removeClass("submit_button");
-		selected_numbers.splice(selected_numbers.indexOf($(this).attr('id')), 1);
+		selected_numbers.delete($(this).attr('id'));
 		selected--;
 		update_sum(sum - numbers_l[parseInt($(this).attr('id'))-1]);
 	}
 	else {
-		selected_numbers.push($(this).attr('id'));
+		selected_numbers.add($(this).attr('id'));
 		$(this).addClass("submit_button");
 		selected++;
 		update_sum(sum + numbers_l[parseInt($(this).attr('id'))-1]);
 	}
+	console.log(selected_numbers);
 }
 function init_labels(numbers = 7){
 	selected = 0;
 	update_score(0);
-	selected_numbers = [];
+	selected_numbers.clear();
 	update_sum(0);
 	numbers_l = [];
 	$("#numbers").empty();
@@ -154,7 +153,7 @@ $(document).ready(function(){
 				var polynomial = "";
 				for (let i of selected_numbers) {
 					polynomial += $("#" + i).val();
-					if (i != selected_numbers[selected_numbers.length - 1]) {
+					if (i != selected_numbers[selected_numbers.size - 1]) {
 						polynomial += "+";
 					}
 				}
