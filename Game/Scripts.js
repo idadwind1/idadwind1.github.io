@@ -13,14 +13,12 @@ function lose(bool_switch, text) {
 		$("#numbers").addClass("hide");
 		$("#Submit").addClass("hide");
 		$("#ShowSumCheckBox").css("display","none");
-		$("#SwitchColorScheme").addClass("hide");
 		$("#gameoverText").removeClass("hide");
 	} else {
 		$("#gameoverText").addClass("hide");
 		$("#numbers").removeClass("hide");
 		$("#Submit").removeClass("hide");
 		$("#ShowSumCheckBox").css("display","");
-		$("#SwitchColorScheme").removeClass("hide");
 		$("#gameoverText").addClass("hide");
 	}
 }
