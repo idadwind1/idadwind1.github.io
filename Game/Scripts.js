@@ -138,6 +138,9 @@ function init_labels(numbers = 7){
 	$(".numberbuttons").bind("click", numberbuttons_clicked);
 }
 $(document).ready(function(){
+	if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+		$("body").addClass("night");
+	}
 	init_labels();
 	$("#SwitchColorScheme").click(function(){
 		if ($("body").hasClass("night")){
