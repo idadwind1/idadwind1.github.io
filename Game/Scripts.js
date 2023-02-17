@@ -159,6 +159,7 @@ $(document).ready(function(){
 				$("#" + i).val(init_label(numbers_l[parseInt(i)-1]));
 				$("#" + i).removeClass("submit_button");
 			}
+			selected_numbers.clear();
 		}
 		else if (selected == 0) {
 			
@@ -171,6 +172,7 @@ $(document).ready(function(){
 				lose(true, polynomial + " equals to " + sum + " and it's not equals to 0");
 			}
 		}
+		console.log(numbers_l);
 	});
 	$("#Reset").click(function(){
 		lose(false, "")
