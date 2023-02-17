@@ -140,6 +140,7 @@ function init_labels(numbers = 7){
 $(document).ready(function(){
 	if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
 		$("body").addClass("night");
+		$("SwitchColorScheme").val("Light Mode");
 	}
 	init_labels();
 	$("#SwitchColorScheme").click(function(){
