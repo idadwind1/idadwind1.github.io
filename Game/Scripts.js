@@ -3,9 +3,27 @@ var selected = 0;
 var label = 7;
 var score = 0;
 var gameover = false;
-var gameover_text = "";
 var numbers_l = [];
 var selected_numbers = new Set();
+function lose(bool_switch, text) {
+	gameover = bool_switch;
+	$("#gameover_text").text(text);
+	if (bool_switch) {
+		$("#gameoverText").removeClass("hide");
+		$("#numbers").addClass("hide");
+		$("#Submit").addClass("hide");
+		$("#ShowSumCheckBox").css("display","none");
+		$("#SwitchColorScheme").addClass("hide");
+		$("#gameoverText").removeClass("hide");
+	} else {
+		$("#gameoverText").addClass("hide");
+		$("#numbers").removeClass("hide");
+		$("#Submit").removeClass("hide");
+		$("#ShowSumCheckBox").css("display","");
+		$("#SwitchColorScheme").removeClass("hide");
+		$("#gameoverText").addClass("hide");
+	}
+}
 function PermutationCombinations(things, countInOneGroup)
 {
 	result = [];
@@ -148,24 +166,16 @@ $(document).ready(function(){
 			
 		}
 		else{
-			gameover = true;
 			if (sum!=0){
 				var polynomial = "";
-				for (let i of selected_numbers) {
-					polynomial += $("#" + i).val();
-					if (i != selected_numbers[selected_numbers.size - 1]) {
-						polynomial += "+";
-					}
-				}
-				gameover_text = polynomial + " equals to " + sum + " and it's not equals to 0";
+				for (let i of selected_numbers) polynomial += $("#" + i).val() + "+";
+				polynomial = polynomial.substr(0, polynomial.length - 1);
+				lose(true, polynomial + " equals to " + sum + " and it's not equals to 0");
 			}
-			$("#numbers").addClass("hide");
-			$("#Submit").addClass("hide");
-			$("#ShowSum").addClass("hide");
-			$("#SwitchColorScheme").addClass("hide");
 		}
 	});
 	$("#Reset").click(function(){
+		lose(false, "")
 		init_labels(label);
 	});
 	$("#ShowSum").click(function() {

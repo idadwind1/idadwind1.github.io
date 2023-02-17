@@ -15,43 +15,34 @@
 	-o-transition-duration:0.5s;
 	transition-duration: 0.5s;
 }
+.inline_block{
+	display: inline-block;
+}
 
 /*texts*/
+.night span{
+	color: white;
+}
 .title {
 	font-size: 36px;
 	font-weight: 300;
 }
-.subtitle {
+.subtitle2 {
 	font-size:15px;
-	font-weight: 400;
-}
-.night .title {
-	font-size: 36px;
-	color: white;
-	font-weight: 300;
-}
-.night .subtitle {
-	font-size:15px;
-	color: white;
 	font-weight: 400;
 }
 .text {
 	font-size: 17px;
 	color: black;
 }
-.night .text {
-	font-size:17px;
-	color: white;
-}
 .data{
 	font-size: 17px;
 	color: black;
 	font-weight: bold;
 }
-.night .data{
-	font-size: 17px;
-	color: white;
-	font-weight: bold;
+.subtitle{
+	font-size:20px;
+	font-weight: 350;
 }
 /*buttons*/
 .buttons {
