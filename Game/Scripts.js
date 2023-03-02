@@ -22,52 +22,34 @@ function lose(bool_switch, text) {
 		$("#gameoverText").addClass("hide");
 	}
 }
-function PermutationCombinations(things, countInOneGroup)
-{
-	result = [];
-	if (countInOneGroup != 2)
-	{
-		for (let i = 0; i < tmp.length; i++)
-		{
-			tmp2 = [ -114514 ];
-			for (let j = 2; j < things.length; j++) tmp2.push(things[j]);
-			ls = PermutationCombinations(tmp2, countInOneGroup - 1);
-			for (let j = 0; j < ls.length; j++)
-			{
-				if (!ls[j].includes(-114514) || ls[j][1] <= tmp[i][1]) continue;
-				tmp3 = 
-				[
-					tmp[i][0],
-					tmp[i][1]
-				];
-				for (let l of ls[j]) if (l != -114514) tmp3.push(l);
-				result.push(tmp3);
-			}
-		}
-		return result;
-	}
-	if (countInOneGroup == 1)
-	{
-		for (let i of things)
-		{
-			result.push([ things[i] ]);
-		}
-		return result;
-	}
-	for (let i of things)
-	{
-		for (let j of things)
-		{
-			if (i >= j) continue;
-			result.push([ i, j ]);
-		}
-	}
-	return result;
+function getCombinations(arr, n) {
+  if (n > arr.length) { // 处理n大于列表长度的情况
+    return [];
+  }
+  
+  const result = [];
+  
+  // 递归函数，获取所有n个元素的组合
+  function generateCombos(currentCombo, remainingElements) {
+    if (currentCombo.length === n) {
+      result.push(currentCombo);
+    } else {
+      for (let i = 0; i < remainingElements.length; i++) {
+        const newCombo = currentCombo.concat(remainingElements[i]);
+        const newRemaining = remainingElements.slice(i + 1);
+        generateCombos(newCombo, newRemaining);
+      }
+    }
+  }
+  
+  generateCombos([], arr);
+  
+  return result;
 }
 function get_ok_group() {
 	res = [];
 	for (let i = 1; i < numbers_l.length; i++) {
-		ls = PermutationCombinations(Array.from({length: label}, (val, j) => j),i);
+		ls = getCombinations(Array.from({length: label}, (val, j) => j),i);
 		for (let j of ls) {
 			j_sum = 0;
 			for (let k of j) {
@@ -186,4 +168,7 @@ $(document).ready(function(){
 		if ($("#sum_text").hasClass("hide")) $("#sum_text").removeClass("hide");
 		else $("#sum_text").addClass("hide");
 	});
+	$("#Help").click(function() {
+		
+	})
 });
