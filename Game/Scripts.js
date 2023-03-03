@@ -5,6 +5,7 @@ var score = 0;
 var gameover = false;
 var numbers_l = [];
 var selected_numbers = new Set();
+var help_used_time = 0;
 function lose(bool_switch, text) {
 	gameover = bool_switch;
 	$("#gameover_text").text(text);
@@ -14,12 +15,14 @@ function lose(bool_switch, text) {
 		$("#Submit").addClass("hide");
 		$("#ShowSumCheckBox").css("display","none");
 		$("#gameoverText").removeClass("hide");
+		$("#Help").addClass("hide");
 	} else {
 		$("#gameoverText").addClass("hide");
 		$("#numbers").removeClass("hide");
 		$("#Submit").removeClass("hide");
 		$("#ShowSumCheckBox").css("display","");
 		$("#gameoverText").addClass("hide");
+		$("#Help").removeClass("hide");
 	}
 }
 function getCombinations(arr, n) {
@@ -84,6 +87,10 @@ function update_sum(value) {
 function update_score(value) {
 	score = value;
 	$("#score_span").text(score);
+}
+function update_help(value) {
+	help_used_time = value;
+	$("#help_span").text(help_used_time);
 }
 function init_label(n){
 	if (n<0) return "(" + n + ")";
@@ -167,6 +174,7 @@ $(document).ready(function(){
 		else $("#sum_text").addClass("hide");
 	});
 	$("#Help").click(function() {
+		update_help(help_used_time+1);
 		arr = get_ok_group();
 		for (let i of selected_numbers) $("#" + i).removeClass("submit_button");
 		selected_numbers = new Set(arr[parseInt(Math.random()*(arr.length+1),10)]);
