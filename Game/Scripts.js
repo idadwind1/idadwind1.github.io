@@ -16,6 +16,7 @@ function lose(bool_switch, text) {
 		$("#ShowSumCheckBox").css("display","none");
 		$("#gameoverText").removeClass("hide");
 		$("#Help").addClass("hide");
+		$("#deadendDetection").addClass("hide");
 	} else {
 		$("#gameoverText").addClass("hide");
 		$("#numbers").removeClass("hide");
@@ -23,16 +24,12 @@ function lose(bool_switch, text) {
 		$("#ShowSumCheckBox").css("display","");
 		$("#gameoverText").addClass("hide");
 		$("#Help").removeClass("hide");
+		$("#deadendDetection").removeClass("hide");
 	}
 }
 function getCombinations(arr, n) {
-  if (n > arr.length) { // 处理n大于列表长度的情况
-    return [];
-  }
-  
+  if (n > arr.length) return [];
   const result = [];
-  
-  // 递归函数，获取所有n个元素的组合
   function generateCombos(currentCombo, remainingElements) {
     if (currentCombo.length === n) {
       result.push(currentCombo);
@@ -111,11 +108,14 @@ function numberbuttons_clicked(){
 		update_sum(sum + numbers_l[parseInt($(this).attr('id'))-1]);
 	}
 }
+function init_game(numbers = 7) {
+	update_sum(0);
+	update_score(0);
+	init_labels(numbers);
+}
 function init_labels(numbers = 7){
 	selected = 0;
-	update_score(0);
 	selected_numbers.clear();
-	update_sum(0);
 	numbers_l = [];
 	$("#numbers").empty();
 	for (var i = 0; i < numbers; i++){
@@ -130,7 +130,7 @@ $(document).ready(function(){
 		$("body").addClass("night");
 		$("#SwitchColorScheme").val("Light Mode");
 	}
-	init_labels();
+	init_game(label);
 	$("#SwitchColorScheme").click(function(){
 		if ($("body").hasClass("night")){
 			$("body").removeClass("night");
@@ -167,7 +167,7 @@ $(document).ready(function(){
 	});
 	$("#Reset").click(function(){
 		lose(false, "")
-		init_labels(label);
+		init_game(label);
 	});
 	$("#ShowSum").click(function() {
 		if ($("#sum_text").hasClass("hide")) $("#sum_text").removeClass("hide");
@@ -180,5 +180,14 @@ $(document).ready(function(){
 		selected_numbers = new Set(arr[parseInt(Math.random()*(arr.length+1),10)]);
 		for (let i of selected_numbers) $("#" + i).addClass("submit_button");
 		selected = selected_numbers.length;
+	});
+	$("#deadendDetection").click(function() {
+		arr = get_ok_group();
+		arr = arr[parseInt(Math.random()*(arr.length+1),10)];
+		if (arr.length == 0) {init_labels(label);return;}
+		tmp = "";
+		for (let i of arr) tmp += init_label(numbers_l[i-1]) + "+";
+		tmp = tmp.substr(0, tmp.length - 1);
+		lose(true, "Not the dead end yet, " + tmp + " can still be offset");
 	})
 });

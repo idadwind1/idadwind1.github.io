@@ -77,6 +77,15 @@
     background-color: red;
 }
 
+.warning_button{
+	border: 2px solid gold;
+}
+
+.warning_button:hover{
+	background-color: gold;
+	color: black;
+}
+
 .button {
     border: 2px solid gray;
 }
