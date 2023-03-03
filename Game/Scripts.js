@@ -58,7 +58,7 @@ function get_ok_group() {
 			if (j_sum == 0){
 				tmp = [];
 				for (let k of j) {
-					tmp.push(init_label(numbers_l[k]));
+					tmp.push(k+1);
 				}
 				res.push(tmp);
 			}
@@ -103,7 +103,6 @@ function numberbuttons_clicked(){
 		selected++;
 		update_sum(sum + numbers_l[parseInt($(this).attr('id'))-1]);
 	}
-	console.log(selected_numbers);
 }
 function init_labels(numbers = 7){
 	selected = 0;
@@ -158,7 +157,6 @@ $(document).ready(function(){
 				lose(true, polynomial + " equals to " + sum + " and it's not equals to 0");
 			}
 		}
-		console.log(numbers_l);
 	});
 	$("#Reset").click(function(){
 		lose(false, "")
@@ -169,6 +167,10 @@ $(document).ready(function(){
 		else $("#sum_text").addClass("hide");
 	});
 	$("#Help").click(function() {
-		
+		arr = get_ok_group();
+		for (let i of selected_numbers) $("#" + i).removeClass("submit_button");
+		selected_numbers = new Set(arr[parseInt(Math.random()*(arr.length+1),10)]);
+		for (let i of selected_numbers) $("#" + i).addClass("submit_button");
+		selected = selected_numbers.length;
 	})
 });
