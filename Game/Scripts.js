@@ -183,8 +183,8 @@ $(document).ready(function(){
 	});
 	$("#deadendDetection").click(function() {
 		arr = get_ok_group();
-		arr = arr[parseInt(Math.random()*(arr.length+1),10)];
 		if (arr.length == 0) {init_labels(label);return;}
+		arr = arr[parseInt(Math.random()*(arr.length+1),10)];
 		tmp = "";
 		for (let i of arr) tmp += init_label(numbers_l[i-1]) + "+";
 		tmp = tmp.substr(0, tmp.length - 1);
