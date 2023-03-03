@@ -111,6 +111,7 @@ function numberbuttons_clicked(){
 function init_game(numbers = 7) {
 	update_sum(0);
 	update_score(0);
+	update_help(0);
 	init_labels(numbers);
 }
 function init_labels(numbers = 7){
