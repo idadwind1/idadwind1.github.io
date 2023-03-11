@@ -1,18 +1,18 @@
 <html>
 	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<title>Digital Offset Game</title>
-		<script src="Scripts.js"></script>
-		<link rel="icon" href="icon.ico" type="image/x-icon">
-		<link rel="stylesheet" type="text/css" href="Style.css">
+		<script src="BasicScripts.js"></script>
+		<link rel="stylesheet" type="text/css" href="BasicStyle.css">
 	</head>
-	<body>
-		<div id="titles" align="center" class="trans">
+	<body style="user-select:none">
+		<div id="titles" align="center">
 			<span class="title">Digital Offset Game</span>
 			<br>
 			<span class="subtitle2">By Idad Wind</span>
 		</div>
 		<br>
-		<div id="numbers" align="center" class="trans">
+		<div id="numbers" align="center">
 		</div>
 		<div name="gameoverText" align="center" class="hide" id="gameoverText">
 			<span class="subtitle">Game Over</span>
@@ -20,23 +20,22 @@
 			<span class="subtitle2" id="gameover_text"></span>
 		</div>
 		<br>
-		<div name="controls" align="center" class="trans">
-			<input type="submit" id="Submit" value="Submit" class="buttons submit_button">
-			<input type="reset" id="Reset" value="Reset" class="buttons reset_button">
-			<input type="button" id="deadendDetection" value="Dead End Detection" class="buttons warning_button">
-			<input type="button" id="Help" value="Help" class="buttons">
-			<div id="ShowSumCheckBox" class="trans inline_block">
-				<label for="ShowSum" class="checkbox buttons">
+		<div id="controls" align="center">
+			<input type="submit" id="Submit" value="Submit" class="submit_button">
+			<input type="reset" id="Reset" value="Reset" class="reset_button">
+			<input type="button" id="deadendDetection" value="Dead End Detection" class="warning_button">
+			<input type="button" id="Help" value="Help" class="">
+			<div id="ShowSumCheckBox" class="inline_block">
+				<label for="ShowSum" class="checkbox">
 					<input type="checkbox" id="ShowSum" style="cursor: pointer">
 					<span style="cursor: pointer">Show Sum</span>
 				</label>
 			</div>
-			<input type="button" id="SwitchColorScheme" value="Dark Mode" class="buttons">
 		</div>
-		<div id="infomations" align="center" class="trans">
+		<div id="infomations" align="center">
 			<span class="text">Score: <span class="data" id="score_span">0</span></span>
 			<span class="text">&nbsp;Help Used Time: <span class="data" id="help_span">0</span></span>
-			<span class="text hide" id="sum_text">&nbsp;Sum: <span class="data" id="sum_span" style="color:red">None</span></span>
+			<span class="text hide-with-self" id="sum_text">&nbsp;Sum: <span class="data" id="sum_span" style="color:red">None</span></span>
 		</div>
 	</body>
 </html>

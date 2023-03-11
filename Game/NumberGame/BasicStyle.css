@@ -1,0 +1,43 @@
+/*body*/
+.hide *{
+	display: none;
+}
+.hide-with-self, .hide-with-self *{
+	display: none;
+}
+.inline_block{
+	display: inline-block;
+}
+
+/*texts*/
+.title {
+	font-size: 20px;
+}
+.subtitle2 {
+	font-size:15px;
+}
+.text {
+	color: black;
+}
+.data{
+	color: black;
+	font-weight: bold;
+}
+.subtitle{
+	font-size:20px;
+}
+/*buttons*/
+.submit_button {
+    border: 2px solid green;
+}
+.reset_button {
+    border: 2px solid red;
+}
+.warning_button{
+	border: 2px solid gold;
+}
+/*checkboxes&radioboxes*/
+.checkbox{
+	display: inline-block;
+	font-size: 16px;
+}

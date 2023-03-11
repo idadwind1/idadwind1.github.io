@@ -111,6 +111,3 @@
 .checkbox:hover/*,.checkbox:focus*/ {
     background-color: gray;
 }
-.checkbox.hide{
-	display: none;
-}

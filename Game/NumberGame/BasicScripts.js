@@ -14,15 +14,11 @@ function lose(bool_switch, text) {
 		document.getElementById("numbers").classList.add("hide");
 		document.getElementById("controls").classList.add("hide");
 		document.getElementById("Reset").style.display = "inline-block";
-		document.getElementById("SwitchColorScheme").style.display = "inline-block";
-		document.getElementById("ShowSumCheckBox").classList.remove("inline_block");
 	} else {
 		document.getElementById("gameoverText").classList.add("hide");
 		document.getElementById("numbers").classList.remove("hide");
 		document.getElementById("controls").classList.remove("hide");
 		document.getElementById("Reset").style.display = "";
-		document.getElementById("SwitchColorScheme").style.display = "";
-		document.getElementById("ShowSumCheckBox").classList.add("inline_block");
 	}
 }
 function getCombinations(arr, n) {
@@ -120,28 +116,14 @@ function init_labels(numbers = 7){
 	for (var i = 0; i < label; i++){
 		n = parseInt(Math.random()*19-9,10);
 		numbers_l.push(n)
-		document.getElementById("numbers").insertAdjacentHTML("beforeend", "<input type=\"button\" id=\"" + (i+1) + "\" value=\"" + init_label(n) + "\" class=\"buttons numberbuttons\">");
+		document.getElementById("numbers").insertAdjacentHTML("beforeend", "<input type=\"button\" id=\"" + (i+1) + "\" value=\"" + init_label(n) + "\" class=\"numberbuttons\">");
 	}
 	for (let i of document.getElementsByClassName("numberbuttons")) {
 		i.addEventListener("click", numberbuttons_clicked)
 	}
 }
 function docReady(){
-	if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
-		document.body.classList.add("night");
-		document.getElementById("SwitchColorScheme").value = "Light Mode";
-	}
 	init_game(label);
-	document.getElementById("SwitchColorScheme").addEventListener("click", function(){
-		if (document.body.classList.contains("night")){
-			document.body.classList.remove("night");
-			document.getElementById("SwitchColorScheme").value="Dark Mode";
-		}
-		else{
-			document.body.classList.add("night")
-			document.getElementById("SwitchColorScheme").value="Light Mode";
-		}
-	});
 	document.getElementById("Submit").addEventListener("click", function(){
 		if (sum == 0 && selected != 0){
 			update_score(score + 1);
