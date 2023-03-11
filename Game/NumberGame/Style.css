@@ -64,7 +64,7 @@
 	cursor: pointer;
 	background-color: white;
 	color: black;
-    border: 2px solid gray;
+	border: 2px solid gray;
 }
 .night .buttons {	
     background-color: #424242;
@@ -106,7 +106,7 @@
 	font-size: 16px;
 	cursor: pointer;
 	border: 2px solid gray;
-	height: 24.8;
+	height: 24.8px;
 }
 .checkbox:hover/*,.checkbox:focus*/ {
     background-color: gray;
