@@ -3,10 +3,13 @@
 	color: #E0E0E0;
 	background-color: #424242;
 }
-.hide{
+.hide *{
 	display: none;
 }
-.trans > *{
+.hide-with-self, .hide-with-self *{
+	display: none;
+}
+.trans *{
 	/* Firefox 4 */
 	-moz-transition-duration:0.5s;
 	/* Safari and Chrome */
@@ -14,6 +17,15 @@
 	/* Opera */
 	-o-transition-duration:0.5s;
 	transition-duration: 0.5s;
+}
+.not-trans {
+	/* Firefox 4 */
+	-moz-transition-duration:0s;
+	/* Safari and Chrome */
+	-webkit-transition-duration:0s;
+	/* Opera */
+	-o-transition-duration:0s;
+	transition-duration: 0s;
 }
 .inline_block{
 	display: inline-block;
@@ -86,10 +98,6 @@
 	color: black;
 }
 
-.button {
-    border: 2px solid gray;
-}
-
 /*checkboxes&radioboxes*/
 .checkbox{
 	padding: 1px 6px 1px 0px;
@@ -97,9 +105,12 @@
 	border-radius: 5px;
 	font-size: 16px;
 	cursor: pointer;
-    border: 2px solid gray;
+	border: 2px solid gray;
 	height: 24.8;
 }
 .checkbox:hover/*,.checkbox:focus*/ {
     background-color: gray;
+}
+.checkbox.hide{
+	display: none;
 }
