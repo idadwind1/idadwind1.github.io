@@ -48,6 +48,19 @@ function get_ok_group() {
 	}
 	return res;
 }
+function randomNum(minNum,maxNum){ 
+    switch(arguments.length){ 
+        case 1: 
+            return parseInt(Math.random()*minNum+1,10); 
+        break; 
+        case 2: 
+            return parseInt(Math.random()*(maxNum-minNum+1)+minNum,10); 
+        break; 
+            default: 
+                return 0; 
+            break; 
+    } 
+} 
 ///////////////////////////////////////////////////////
 //Document & Game Actions
 ///////////////////////////////////////////////////////
@@ -113,7 +126,6 @@ function numberbuttons_clicked(){
 	}
 }
 function init_game(numbers = 7) {
-	update_sum(0);
 	update_score(0);
 	update_help(0);
 	init_labels(numbers);
@@ -121,10 +133,11 @@ function init_game(numbers = 7) {
 function init_labels(numbers = 7){
 	selected = 0;
 	selected_numbers.clear();
+	update_sum(0);
 	numbers_l = [];
 	document.getElementById("numbers").innerHTML = "";
 	for (var i = 1; i <= label; i++){
-		n = parseInt(Math.random()*19-9,10);
+		n = randomNum(-10,9);
 		numbers_l.push(n);
 		document.getElementById("numbers").insertAdjacentHTML("beforeend", "<input type=\"button\" id=\"" + i + "\" value=\"" + init_label(n) + "\" class=\"" + (Basic?"":"buttons ") + "numberbuttons\">");
 	}
@@ -159,7 +172,7 @@ function DocumentReadyEvent() {
 			selected = 0;
 			update_sum(0);
 			for (let i of selected_numbers) {
-				numbers_l[parseInt(i)-1] = parseInt(Math.random()*19-9,10);
+				numbers_l[parseInt(i)-1] = randomNum(-10,9);
 				document.getElementById(i).value = init_label(numbers_l[parseInt(i)-1]);
 				document.getElementById(i).classList.remove("submit_button");
 			}
@@ -189,15 +202,16 @@ function DocumentReadyEvent() {
 		update_help(help_used_time+1);
 		arr = get_ok_group();
 		for (let i of selected_numbers) document.getElementById(i).classList.remove("submit_button");
-		selected_numbers = new Set(arr[parseInt(Math.random()*(arr.length+1),10)]);
+		selected_numbers = new Set(arr[randomNum(0,arr.length-1)]);
 		for (let i of selected_numbers) document.getElementById(i).classList.add("submit_button");
 		selected = selected_numbers.length;
 	});
 	document.getElementById("deadendDetection").addEventListener("click", function() {
 		arr = get_ok_group();
 		if (arr.length == 0) {init_labels(label);return;}
-		arr = arr[parseInt(Math.random()*(arr.length+1),10)];
+		arr = arr[randomNum(0,arr.length-1)];
 		tmp = "";
+		console.log(arr);
 		for (let i of arr) tmp += init_label(numbers_l[i-1]) + "+";
 		tmp = tmp.substr(0, tmp.length - 1);
 		lose(true, "Not the dead end yet, " + tmp + " can still be offset");
