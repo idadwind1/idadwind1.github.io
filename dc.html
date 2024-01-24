@@ -1,0 +1,96 @@
+
+<!-- saved from url=(0056)https://ordering.kcisec.com/orders_print2.asp?id=7568236 -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=GBK">
+
+
+<!--<script language=JavaScript>
+ self.opener.location.reload();
+ </script>-->
+ 
+<title>餐厅订餐系统_昆山康桥学校</title>
+<style type="text/css">
+<!--
+body,td,th {
+	font-size: 14px;
+	font-family: 宋体;
+}
+body {
+	margin-left: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+}
+-->
+</style>
+<script> 
+		function doPrint() {
+			var myDoc = {
+				documents: document,
+				/*
+				 要打印的div 对象在本文档中，控件将从本文档中的 id 为 'page1' 的div对象，
+				 作为首页打印id 为'page2'的作为第二页打印            */
+				copyrights: '杰创软件拥有版权  www.jatools.com' // 版权声明,必须   
+			};
+	//	if(typeof(jatoolsPrinter.page_div_prefix)=='undefined')
+		if(document.all.jatoolsPrinter.object == null)
+		{  
+//        alert("jatoolsPrinter控件没有安装成功，将以普通方式打印！")  
+ //       return ;  
+			print();
+			window.opener=null;
+			window.close();
+    }  
+			document.getElementById("jatoolsPrinter").print(myDoc, false); // 直接打印，不弹出打印机设置对话框 
+			window.opener=null;
+			window.close();
+		}
+</script> 
+<!-- 禁用右键: --> 
+<script> 
+function stop(){ 
+return false; 
+} 
+document.oncontextmenu=stop; 
+</script>
+</head>
+<body>
+<div style="display:none111">
+<div id="page1">
+<table cellpadding="0" cellspacing="0" border="0" width="220" style="BORDER-COLLAPSE: collapse;">
+         <tbody><tr><td height="45" align="center" colspan="16"><div align="center" style="font-size:18px"><b>取餐小票|Meal tickets</b></div>
+           <p align="left"><strong>帐　号:</strong>16319(5年级以上杨思铖)<br>
+             <strong>类　别:</strong>2024-1-24&nbsp;中餐|lun<br>
+             <strong>印　次:</strong>1次　
+             <strong>备　注:</strong>[硬推]
+           </p><hr></td>
+         </tr>
+          <tr> 
+			<td width="25" height="25"><strong>NO.</strong></td>
+			<td width="152" height="25"><strong>名称|Name</strong></td>
+			<td width="43" align="center"><strong>数量|Qty</strong></td>
+  </tr>
+          <tr>
+            <td height="25" valign="middle"><strong>1</strong></td>
+            <td height="25" valign="middle"><strong>八面玲珑<br>Noodle Bar</strong>&nbsp;</td>
+            <td align="center" valign="middle"><strong>1</strong></td>
+      </tr>
+		  
+          <tr>
+            <td height="25" valign="middle"></td>
+            <td height="25" valign="middle"><strong>合计|Total</strong></td>
+            <td align="center" valign="middle"><strong>1</strong></td>
+      </tr>
+          <tr>
+            <td height="22" colspan="3"><hr><strong>取餐窗口|Windows:档口07</strong>
+            <br>
+<strong>Print time:2024/1/24 12:53:20</strong></td>
+          </tr>
+          <tr>
+            <td height="22" colspan="3"><div align="center">-----<strong>昆山康桥学校</strong>-----</div></td>
+          </tr>
+</tbody></table></div></div>
+<object classid="clsid:B43D3361-D075-4BE2-87FE-057188254255" codebase="https://ordering.kcisec.com/jatoolsPrinter.cab#version=8,6,0,0" width="1" height="1" id="jatoolsPrinter">
+</object>
+
+
+</body></html>
