@@ -115,7 +115,7 @@ b.children[4].children[0].children[3].innerText = `Print time:${d.toISOString().
 b.children[0].children[0].children[1].innerHTML = `<strong>帐　号:</strong>${getQueryString('i')}(5年级以上${getQueryString("n")})<br>\n             <strong>类　别:</strong>${d.toISOString().substring(0, 10)}&nbsp;${getQueryString('m') == 'l' ? '中餐|lun' : '晚餐|din'}<br>\n             <strong>印　次:</strong>1次　\n             <strong>备　注:</strong>[硬推]\n           `;
 b.children[2].children[1].children[0].innerText = getQueryString('c') == '1' ? '八面玲珑\nNoodle Bar' : '中式套餐档口\nChinese Food';
 b.children[4].children[0].children[1].innerText = '取餐窗口|Windows:档口' + (getQueryString('c') == '1' ? '07' : '14、档口15、档口16');
-//doPrint();
+doPrint();
 </script>
 
 </body></html>
