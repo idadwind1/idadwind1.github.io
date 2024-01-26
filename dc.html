@@ -58,6 +58,7 @@ function getQueryString(name) {
 			window.opener=null;
 			window.close();
 		}
+console.log('Initalized')
 </script> 
 <!-- 禁用右键:
 <script> 
@@ -110,12 +111,31 @@ document.oncontextmenu=stop;
 
 <script>
 var d = new Date();
+console.log("今 " + d + "です");
 var b = document.body.children[0].children[0].children[0].children[0];
-b.children[4].children[0].children[3].innerText = `Print time:${d.toISOString().substring(0, 10).replaceAll('-','/')} ${d.toTimeString().split(' ')[0]}`;
-b.children[0].children[0].children[1].innerHTML = `<strong>帐　号:</strong>${getQueryString('i')}(5年级以上${getQueryString("n")})<br>\n             <strong>类　别:</strong>${d.toISOString().substring(0, 10)}&nbsp;${getQueryString('m') == 'l' ? '中餐|lun' : '晚餐|din'}<br>\n             <strong>印　次:</strong>1次　\n             <strong>备　注:</strong>[硬推]\n           `;
+b.children[4].children[0].children[3].innerText = 'Print time:' + d.toISOString().substring(0, 10).replace(/-/g,'/') + ' ' + d.toTimeString().split(' ')[0];
 b.children[2].children[1].children[0].innerText = getQueryString('c') == '1' ? '八面玲珑\nNoodle Bar' : '中式套餐档口\nChinese Food';
 b.children[4].children[0].children[1].innerText = '取餐窗口|Windows:档口' + (getQueryString('c') == '1' ? '07' : '14、档口15、档口16');
-doPrint();
+var i = getQueryString('i');
+var n = getQueryString("n");
+var xhr = new XMLHttpRequest();
+if (i){
+	xhr.open("GET", "./G8.json", true);
+	xhr.onreadystatechange = function () {
+		
+		var jsonResponse = "";
+		if (xhr.readyState == 4 && xhr.status == 200) {
+			jsonResponse = JSON.parse(xhr.responseText);
+			console.log(jsonResponse);
+		}
+		name = jsonResponse[i]["name"]
+		console.log("Name: " + name)
+		n = n || !jsonResponse ? n : name;
+		xhr.send();
+		b.children[0].children[0].children[1].innerHTML = '<strong>帐　号:</strong>' + i ? i : "16319" + '(5年级以上' + n ? n : "杨思铖" + ')<br>\n             <strong>类　别:</strong>' + d.toISOString().substring(0, 10) + '&nbsp;' + getQueryString('m') == 'l' ? '中餐|lun' : '晚餐|din' + '<br>\n             <strong>印　次:</strong>1次　\n             <strong>备　注:</strong>[硬推]\n           ';
+		doPrint();
+	};
+}
+else doPrint();
 </script>
-
 </body></html>
