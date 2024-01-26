@@ -1,3 +1,7 @@
+Total: 439, Uncracked: 12, Chinese: 434,
+Three-characters-chinese-name: 408,
+Four-characters-chinese-name: 6
+
 16013 - 俞梓成 - yu zi cheng - Ks@20090923
 16017 - 徐俊懿 - xu jun yi - Ks@20091217
 16031 - 陈当 - chen dang - Ks@20100407
