@@ -119,7 +119,8 @@ b.children[4].children[0].children[1].innerText = '取餐窗口|Windows:档口' 
 var i = getQueryString('i');
 var n = getQueryString("n");
 var xhr = new XMLHttpRequest();
-if (i){
+var str = '<strong>帐　号:</strong>' + (i ? i : "16319");
+if (i && !n){
 	xhr.open("GET", "./G8.json", true);
 	xhr.onreadystatechange = function () {
 		var jsonResponse = "";
@@ -129,12 +130,16 @@ if (i){
 		}
 		name = jsonResponse[i]["name"];
 		console.log("Name: " + name);
-		n = (n || !jsonResponse) ? n : name;
-		b.children[0].children[0].children[1].innerHTML = ('<strong>帐　号:</strong>' + (i ? i : "16319") + '(5年级以上' + (n ? n : "杨思铖") + ')<br>\n             <strong>类　别:</strong>' + d.toISOString().substring(0, 10) + '&nbsp;' + (getQueryString('m') == 'l' ? '中餐|lun' : '晚餐|din') + '<br>\n             <strong>印　次:</strong>1次　\n             <strong>备　注:</strong>[硬推]\n           ');
+		n = !jsonResponse ? "杨思铖" : name;
+		b.children[0].children[0].children[1].innerHTML = str + '(5年级以上' + n + ')<br>\n             <strong>类　别:</strong>' + d.toISOString().substring(0, 10) + '&nbsp;' + (getQueryString('m') == 'l' ? '中餐|lun' : '晚餐|din') + '<br>\n             <strong>印　次:</strong>1次　\n             <strong>备　注:</strong>[硬推]\n           ';
 		doPrint();
 	};
 	xhr.send();
 }
-else doPrint();
+else
+{
+	b.children[0].children[0].children[1].innerHTML = str + '(5年级以上' + (n ? n : "杨思铖") + ')<br>\n             <strong>类　别:</strong>' + d.toISOString().substring(0, 10) + '&nbsp;' + (getQueryString('m') == 'l' ? '中餐|lun' : '晚餐|din') + '<br>\n             <strong>印　次:</strong>1次　\n             <strong>备　注:</strong>[硬推]\n           ';
+	doPrint();
+}
 </script>
 </body></html>
