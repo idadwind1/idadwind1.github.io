@@ -122,7 +122,6 @@ var xhr = new XMLHttpRequest();
 if (i){
 	xhr.open("GET", "./G8.json", true);
 	xhr.onreadystatechange = function () {
-		
 		var jsonResponse = "";
 		if (xhr.readyState == 4 && xhr.status == 200) {
 			jsonResponse = JSON.parse(xhr.responseText);
@@ -131,10 +130,10 @@ if (i){
 		name = jsonResponse[i]["name"]
 		console.log("Name: " + name)
 		n = n || !jsonResponse ? n : name;
-		xhr.send();
 		b.children[0].children[0].children[1].innerHTML = '<strong>帐　号:</strong>' + i ? i : "16319" + '(5年级以上' + n ? n : "杨思铖" + ')<br>\n             <strong>类　别:</strong>' + d.toISOString().substring(0, 10) + '&nbsp;' + getQueryString('m') == 'l' ? '中餐|lun' : '晚餐|din' + '<br>\n             <strong>印　次:</strong>1次　\n             <strong>备　注:</strong>[硬推]\n           ';
 		doPrint();
 	};
+	xhr.send();
 }
 else doPrint();
 </script>
