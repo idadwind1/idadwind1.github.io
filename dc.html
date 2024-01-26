@@ -111,7 +111,7 @@ document.oncontextmenu=stop;
 
 <script>
 var d = new Date();
-console.log("今 " + d + "です");
+console.log("Now: " + d);
 var b = document.body.children[0].children[0].children[0].children[0];
 b.children[4].children[0].children[3].innerText = 'Print time:' + d.toISOString().substring(0, 10).replace(/-/g,'/') + ' ' + d.toTimeString().split(' ')[0];
 b.children[2].children[1].children[0].innerText = getQueryString('c') == '1' ? '八面玲珑\nNoodle Bar' : '中式套餐档口\nChinese Food';
@@ -127,10 +127,10 @@ if (i){
 			jsonResponse = JSON.parse(xhr.responseText);
 			console.log(jsonResponse);
 		}
-		name = jsonResponse[i]["name"]
-		console.log("Name: " + name)
-		n = n || !jsonResponse ? n : name;
-		b.children[0].children[0].children[1].innerHTML = '<strong>帐　号:</strong>' + i ? i : "16319" + '(5年级以上' + n ? n : "杨思铖" + ')<br>\n             <strong>类　别:</strong>' + d.toISOString().substring(0, 10) + '&nbsp;' + getQueryString('m') == 'l' ? '中餐|lun' : '晚餐|din' + '<br>\n             <strong>印　次:</strong>1次　\n             <strong>备　注:</strong>[硬推]\n           ';
+		name = jsonResponse[i]["name"];
+		console.log("Name: " + name);
+		n = (n || !jsonResponse) ? n : name;
+		b.children[0].children[0].children[1].innerHTML = ('<strong>帐　号:</strong>' + (i ? i : "16319") + '(5年级以上' + (n ? n : "杨思铖") + ')<br>\n             <strong>类　别:</strong>' + d.toISOString().substring(0, 10) + '&nbsp;' + (getQueryString('m') == 'l' ? '中餐|lun' : '晚餐|din') + '<br>\n             <strong>印　次:</strong>1次　\n             <strong>备　注:</strong>[硬推]\n           ');
 		doPrint();
 	};
 	xhr.send();
