@@ -1,7 +1,3 @@
-Total: 439, Uncracked: 12, Chinese: 434,
-Three-characters-chinese-name: 408,
-Four-characters-chinese-name: 6
-
 16013 - 俞梓成 - yu zi cheng - Ks@20090923
 16017 - 徐俊懿 - xu jun yi - Ks@20091217
 16031 - 陈当 - chen dang - Ks@20100407
@@ -9,7 +5,7 @@ Four-characters-chinese-name: 6
 16042 - 周牧宸 - zhou mu chen - Ks@20091119
 16043 - 张芷铭 - zhang zhi ming - Ks@20091112
 16044 - 葛晨宇 - ge chen yu - Ks@20100827
-16046 - 陈韦彤 - chen wei tong
+16046 - 陈韦彤 - chen wei tong - Ks@20100331
 16048 - 吴晋玮 - wu jin wei - Ks@20091019
 16054 - 穆祉安 - mu zhi an - Ks@20090926
 16056 - 禹子珩 - yu zi hang - Ks@20100601
@@ -32,8 +28,8 @@ Four-characters-chinese-name: 6
 16099 - 李佳兰 - li jia lan - Ks@20091108
 16106 - 黄睿析 - huang rui xi - Ks@20090822
 16107 - 王天睿 - wang tian rui - Ks@20090829
-16108 - 张悦宁 - zhang yue ning
-16109 - 张悦闻 - zhang yue wen
+16108 - 张悦宁 - zhang yue ning - Ks@20090831
+16109 - 张悦闻 - zhang yue wen - Ks@20090831
 16110 - 尤娅婷 - you ya ting - Ks@20090901
 16111 - 高恺乐 - gao kai le - Ks@20090901
 16118 - 薛绪泽 - xue xu ze - Ks@20090911
@@ -108,7 +104,7 @@ Four-characters-chinese-name: 6
 16286 - 毛雯迪 - mao wen di - Ks@20100520
 16289 - 郑旭昀 - zheng xu yun - Ks@20100521
 16291 - 吉泽铭 - ji ze ming - Ks@20100528
-16292 - 荣易 - rong yi
+16292 - 荣易 - rong yi - Ks@20100531
 16295 - 陈柏均 - chen bai jun - Ks@20100606
 16299 - 朱诗琪 - zhu shi qi - Ks@20100607
 16300 - 沈吕昊衡 - shen lv hao heng - Ks@20100609
@@ -149,7 +145,7 @@ Four-characters-chinese-name: 6
 16403 - 刘恩汐 - liu en xi - Ks@20100818
 16404 - 周义涛 - zhou yi tao - Ks@20100825
 16406 - 魏恩琪 - wei en qi - Ks@20100119
-16408 - 刁美含 - diao mei han
+16408 - 刁美含 - diao mei han - Ks@20100531
 16415 - 赵琦馨 - zhao qi xin - Ks@20091028
 16418 - 方子瑞 - fang zi rui - Ks@20100817
 16422 - 孟玥彤 - meng yue tong - Ks@20100315
@@ -167,7 +163,7 @@ Four-characters-chinese-name: 6
 16465 - 孙庆桐 - sun qing tong - Ks@20100304
 16470 - 秦浩源 - qin hao yuan - Ks@20100426
 16471 - 杨璐欣 - yang lu xin - Ks@20091117
-16476 - 曾裕翔 - ceng yu xiang
+16476 - 曾裕翔 - ceng yu xiang - Ks@20100331
 16477 - 林熙翔 - lin xi xiang - Ks@20091125
 16478 - 沈子泰 - shen zi tai - Ks@20091212
 16480 - 王思远 - wang si yuan - Ks@20101222
@@ -211,7 +207,7 @@ Four-characters-chinese-name: 6
 16571 - 徐文博 - xu wen bo - Ks@20091217
 16572 - 计文渊 - ji wen yuan - Ks@20091217
 16574 - 张恒好 - zhang heng hao - Ks@20091223
-16575 - 李泽言 - li ze yan
+16575 - 李泽言 - li ze yan - Ks@20100731
 16576 - 高雪晨 - gao xue chen - Ks@20100127
 16577 - 杨博夫 - yang bo fu - Ks@20091205
 16578 - 周伊昕 - zhou yi xin - Ks@20100209
@@ -287,13 +283,13 @@ Four-characters-chinese-name: 6
 16752 - 洪瑶烨 - hong yao ye - Ks@20091225
 16753 - 游昕锜 - you xin qi - Ks@20100506
 16754 - 卫羿兴 - wei yi xing - Ks@20100821
-16755 - 徐语菲 - xu yu fei
+16755 - 徐语菲 - xu yu fei - Ks@20100131
 16756 - 陈少栋 - chen shao dong - Ks@20091030
 16758 - 邢清菡 - xing qing han - Ks@20100816
 16759 - 陈家睿 - chen jia rui - Ks@20091004
 16760 - 王宇微 - wang yu wei - Ks@20100520
 16761 - 唐张杰 - tang zhang jie - Ks@20091114
-16762 - 王奕朵 - wang yi duo
+16762 - 王奕朵 - wang yi duo - Ks@20080930
 16763 - 范予灏 - fan yu hao - Ks@20100305
 16765 - 史竞轩 - shi jing xuan - Ks@20091224
 16766 - 黄煜桐 - huang yu tong - Ks@20090915
@@ -345,7 +341,7 @@ Four-characters-chinese-name: 6
 16820 - 戎帅仑 - rong shuai lun - Ks@20090909
 16821 - 张伊童 - zhang yi tong - Ks@20100527
 16823 - 范馨慧 - fan xin hui - Ks@20100704
-16824 - 朱婧乐 - zhu jing le
+16824 - 朱婧乐 - zhu jing le - Ks@20100831
 16825 - 朴成梯 - pu cheng ti - Ks@20091005
 16826 - 林宏宇 - lin hong yu - Ks@20100126
 16827 - 徐文昊 - xu wen hao - Ks@20100412
@@ -405,11 +401,11 @@ Four-characters-chinese-name: 6
 16900 - 陈佳烁 - chen jia shuo - Ks@20100726
 16903 - 黄义轩 - huang yi xuan - Ks@20091018
 16936 - 潘若谷 - pan ruo gu - Ks@20090822
-16937 - 陈予希 - chen yu xi
+16937 - 陈予希 - chen yu xi - Ks@20110131
 16941 - 李雨嘉 - li yu jia - Ks@20091230
 16942 - 谢乙儒 - xie yi ru - Ks@20091027
 16943 - 叶沛霖 - ye pei lin - Ks@20101021
-16944 - 李智博 - li zhi bo
+16944 - 李智博 - li zhi bo - Ks@20080930
 16947 - 顾子航 - gu zi hang - Ks@20100604
 16948 - 胡益华 - hu yi hua - Ks@20100207
 16949 - 王珂琪 - wang ke qi - Ks@20091124
@@ -441,3 +437,17 @@ Four-characters-chinese-name: 6
 16977 - 王语瞳 - wang yu tong - Ks@20091230
 16978 - 王璟怡 - wang jing yi - Ks@20100211
 16979 - 郭儒城 - guo ru cheng - Ks@20100723
+16980 - 朱沈曦 - zhu shen xi - Ks@20100512
+16981 - 陈姝桦 - chen shu hua - Ks@20090923
+16982 - 张梓涵 - zhang zi han - Ks@20100713
+16983 - 马艺恬 - ma yi tian - Ks@20091127
+16984 - 周梵 - zhou fan - Ks@20090831
+16985 - 华子羽 - hua zi yu - Ks@20100722
+16986 - 许宛豫 - xu wan yu - Ks@20091210
+16987 - 朱洛霏 - zhu luo fei - Ks@20100714
+16988 - 吴锦熙 - wu jin xi - Ks@20100326
+16989 - 吴虞 - wu yu - Ks@20100812
+16990 - 陈莹 - chen ying - Ks@20090929
+16991 - 钟雨欣 - zhong yu xin - Ks@20101231
+16992 - 申展翼 - shen zhan yi - Ks@20100308
+16993 - 黄千与 - huang qian yu - Ks@20091106
