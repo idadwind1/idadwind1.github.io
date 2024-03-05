@@ -217,7 +217,7 @@
 15686 - 陈立谕 - chen li yu - Ks@20090520
 15692 - 白佳颖 - bai jia ying - Ks@20090819
 15697 - 顾奕诺 - gu yi nuo - Ks@20090427
-15707 - 阮相程 - ruan xiang cheng
+15707 - 阮相程 - ruan xiang cheng - Ks@20070916
 15709 - 周悦涵 - zhou yue han - Ks@20080619
 15710 - 白易铭 - bai yi ming - Ks@20090604
 15714 - 朱浩伦 - zhu hao lun - Ks@20090226
@@ -243,7 +243,7 @@
 15755 - 缪牧宸 - mou mu chen - Ks@20090822
 15756 - 邓婉童 - deng wan tong - Ks@20090423
 15759 - 成鉴原 - cheng jian yuan - Ks@20080724
-15764 - 朱泽庶 - zhu ze shu
+15764 - 朱泽庶 - zhu ze shu - Ks@20070126
 15766 - 孙喆 - sun zhe - Ks@20080130
 15768 - 石洪斌 - shi hong bin - Ks@20090715
 15770 - Hotta Jun - Hotta Jun - Ks@20080926
