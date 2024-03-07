@@ -11,8 +11,21 @@
 <div style="font-size: 20px;" id="title">Last Update: Mar. 1 2024</div><br>
 <form>
 <div>
-<input type="text" class="transition" name="search">
-<input type="submit" class="transition button" value="Search">
+<select class="transition inp" id="grade" name="grade">
+	<option value="a">All</option>
+	<option value="7">Grade 7</option>
+	<option value="8">Grade 8</option>
+	<option value="9">Grade 9</option>
+</select>
+<select class="transition inp" id="category" name="category">
+	<option value="a">Any: </option>
+	<option value="i">Id: </option>
+	<option value="n">Name: </option>
+	<option value="p">Pinyin: </option>
+	<option value="b">Birthday: </option>
+</select>
+<input type="text" class="transition inp" id="search" name="search">
+<input type="submit" class="transition inp button" value="Search">
 <small>(<a href="https://en.wikipedia.org/wiki/Regular_expression">Regular expression</a> supported)</small>
 </div>
 <form>
