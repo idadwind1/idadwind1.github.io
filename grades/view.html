@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="./source/view.js"></script>
+<script src="./source/data.js"></script>
+<link rel="stylesheet" media="all" href="./source/view.css">
+<title>KCIS Stud. List - Friendly View</title>
+</head>
+<body style="background-color: antiquewhite;">
+<div class="main">
+<div style="font-size: 20px;" id="title">Last Update: Mar. 1 2024</div><br>
+<form onsubmit="return submit_search()">
+<div>
+<select class="transition inp" id="grade" name="grade">
+	<option value="a">All</option>
+	<option value="7">Grade 7</option>
+	<option value="8">Grade 8</option>
+	<option value="9">Grade 9</option>
+</select>
+<select class="transition inp" id="category" name="category">
+	<option value="a">Any: </option>
+	<option value="i">Id: </option>
+	<option value="n">Name: </option>
+	<option value="p">Pinyin: </option>
+	<option value="b">Birthday: </option>
+</select>
+<input type="text" class="transition inp" id="search" name="search">
+<input type="submit" class="transition inp button" value="Search">
+<small>(<a href="https://en.wikipedia.org/wiki/Regular_expression">Regular expression</a> supported)</small>
+</div>
+</form>
+<br><a href="./random.html">Random</a>
+<div class="list">
+  <ul class="query-table" id="query-table">
+    <li class="table-header">
+      <div class="col col-1">Id</div>
+      <div class="col col-2">Name</div>
+      <div class="col col-2">Pinyin</div>
+      <div class="col col-1">Birthday</div>
+    </li>
+	<!--
+    <li class="table-row">
+      <div class="col col-1" data-label="Id">00000</div>
+      <div class="col col-2" data-label="Name">佚名</div>
+      <div class="col col-2" data-label="Pinyin">yi min</div>
+      <div class="col col-1" data-label="Birthday">19000101</div>
+    </li>
+	!-->
+  </ul>
+</div>
+</div>
+</body>
+</html>
