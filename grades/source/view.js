@@ -31,11 +31,13 @@ function loadData(){
 		((search_all || category_option == 'i') && re.test(stud.id)) ||
 		((search_all || category_option == 'n') && re.test(stud.name)) ||
 		((search_all || category_option == 'p') && re.test(stud.pinyin)) ||
-		((search_all || category_option == 'b') && re.test(stud.birthday))) &&
+		((search_all || category_option == 'b') && re.test(stud.birthday)) ||
+		((search_all || category_option == 'h') && re.test(stud.homeroom)) ||
+		((search_all || category_option == 'c') && re.test(stud.card_id))) &&
 		(stud.grade == grade_option || grade_option == 'a')){
 			console.log(stud);
-			html += '<li class="table-row">' +
-			`<div class="col col-1" data-label="Id">${stud.id}</div>
+			html += `<li class="table-row">
+			<div class="col col-1" data-label="Id">${stud.id}</div>
 			<div class="col col-2" data-label="Name">${stud.name}</div>
 			<div class="col col-2" data-label="Pinyin">${stud.pinyin}</div>
 			<div class="col col-1" data-label="Birthday">${stud.birthday}</div>
