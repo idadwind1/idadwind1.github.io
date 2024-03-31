@@ -1,5 +1,5 @@
 function getQueryString(name) {
-	var query_string = window.location.search
+	var query_string = window.location.search;
 	if (!query_string) return '';
 	var re = /[?&]?([^=]+)=([^&]*)/g;
 	var tokens;
@@ -23,8 +23,7 @@ function loadData(){
 		document.title = 'KCIS Stud. List - Friendly View';
 	else
 		document.title = `KCIS Stud. List - ${search_text} - Friendly View`;
-	console.log(search_all)
-	console.log("Search: " + search_text)
+	console.log("Search: " + search_text);
 	console.log("Matched Studs:");
 	for (let i = 0; i < studs.length; i++){
 		var stud = studs[i];
@@ -56,7 +55,7 @@ function loadData(){
 	table.innerHTML = html;
 	document.getElementById('data-count').innerText = count;
 	document.getElementById('data-tip').innerText = count == 1 ? 'um' : 'a';
-	console.log('Data count: ' + count)
+	console.log('Data count: ' + count);
 	loadForm(grade_option, category_option, search_text);
 }
 function loadForm(arg_grade, arg_category, arg_search){
