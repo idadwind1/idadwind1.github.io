@@ -97,3 +97,6 @@ li {
 	color: white;
 	background-color: gray;
 }
+div .inline{
+	display: inline-block;
+}

@@ -17,6 +17,7 @@ function loadData(){
 	var re = new RegExp(search_text);
 	var table = document.getElementById("query-table");
 	var html = table.innerHTML;
+	var count = 0;
 	grade_option = (grade_option == '' ? 'a' : grade_option);
 	if (search_text == '')
 		document.title = 'KCIS Stud. List - Friendly View';
@@ -49,12 +50,13 @@ function loadData(){
 				<input type="checkbox" ${stud.doStayAtSelfStudy?'checked':''} disabled>Self Study
 		  	</div>
 			</li>`;
+			count ++;
 		}
 	}
 	table.innerHTML = html;
-	console.log(grade_option);
-	console.log(category_option);
-	console.log(search_text);
+	document.getElementById('data-count').innerText = count;
+	document.getElementById('data-tip').innerText = count == 1 ? 'um' : 'a';
+	console.log('Data count: ' + count)
 	loadForm(grade_option, category_option, search_text);
 }
 function loadForm(arg_grade, arg_category, arg_search){
