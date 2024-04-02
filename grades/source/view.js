@@ -17,7 +17,6 @@ function loadData(){
 	var re = new RegExp(search_text);
 	var table = document.getElementById("query-table");
 	var html = table.innerHTML;
-	var count = 0;
 	grade_option = (grade_option == '' ? 'a' : grade_option);
 	if (search_text == '')
 		document.title = 'KCIS Stud. List - Friendly View';
@@ -49,7 +48,6 @@ function loadData(){
 				<input type="checkbox" ${stud.doStayAtSelfStudy?'checked':''} disabled>Self Study
 		  	</div>
 			</li>`;
-			count ++;
 		}
 	}
 	table.innerHTML = html;

@@ -1,4 +1,4 @@
 function loadData(){
-    document.getElementById('data-count').innerText = studs.length;
+    document.getElementById('data-count').innerText = count
 }
 window.onload = loadData;
