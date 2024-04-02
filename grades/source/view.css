@@ -100,6 +100,7 @@ li {
 div .inline{
 	display: inline-block;
 }
-.data-count-label > *{
+.data-count-label{
 	margin-top: 10px;
+	font-size: 20px;
 }
