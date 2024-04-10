@@ -15,6 +15,7 @@ function loadData(){
 	category_option = (category_option == '' ? 'a' : category_option);
 	var search_all = category_option == 'a';
 	var re = new RegExp(search_text);
+	var matched_count = 0;
 	var table = document.getElementById("query-table");
 	var html = table.innerHTML;
 	grade_option = (grade_option == '' ? 'a' : grade_option);
@@ -48,12 +49,13 @@ function loadData(){
 				<input type="checkbox" ${stud.doStayAtSelfStudy?'checked':''} disabled>Self Study
 		  	</div>
 			</li>`;
+			matched_count++;
 		}
 	}
 	table.innerHTML = html;
-	document.getElementById('data-count').innerText = count;
-	document.getElementById('data-tip').innerText = count == 1 ? 'um' : 'a';
-	console.log('Data count: ' + count);
+	document.getElementById('data-count').innerText = matched_count;
+	document.getElementById('data-tip').innerText = matched_count == 1 ? 'um' : 'a';
+	console.log('Matched Data count: ' + matched_count);
 	loadForm(grade_option, category_option, search_text);
 }
 function loadForm(arg_grade, arg_category, arg_search){
