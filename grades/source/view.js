@@ -18,6 +18,8 @@ function loadData(){
 	var matched_count = 0;
 	var table = document.getElementById("query-table");
 	var html = table.innerHTML;
+	var isBoardedIsNull;
+	var doStayAtSelfStudyIsNull;
 	grade_option = (grade_option == '' ? 'a' : grade_option);
 	if (search_text == '')
 		document.title = 'KCIS Stud. List - Friendly View';
@@ -35,6 +37,8 @@ function loadData(){
 		((search_all || category_option == 'h') && re.test(stud.homeroom)) ||
 		((search_all || category_option == 'c') && re.test(stud.card_id))) &&
 		(stud.grade == grade_option || grade_option == 'a')){
+			isBoardedIsNull = stud.isBoarded != false && !stud.isBoarded;
+			doStayAtSelfStudyIsNull = stud.doStayAtSelfStudy != false && !stud.doStayAtSelfStudy;
 			console.log(stud);
 			html += `<li class="table-row">
 			<div class="col col-1" data-label="Id">${stud.id}</div>
@@ -44,9 +48,9 @@ function loadData(){
 			<div class="col col-2" data-label="Homeroom">${stud.homeroom}</div>
 			<div class="col col-2" data-label="Card Id">${stud.card_id}</div>
 			<div class="col col-2" data-label="Dorm">
-				<input type="checkbox" ${stud.isBoarded?'checked':''} disabled>Boarded
+				<input type="checkbox" ${stud.isBoarded?'checked':(isBoardedIsNull ? 'style=\'display: none;\'' : '')} disabled>${isBoardedIsNull ? '<span style="color: red;font-style: italic;">[Unknow]</span>&nbsp;' : ''}Boarded;
 				<br>
-				<input type="checkbox" ${stud.doStayAtSelfStudy?'checked':''} disabled>Self Study
+				<input type="checkbox" ${stud.doStayAtSelfStudy?'checked':(doStayAtSelfStudyIsNull ? 'style=\'display: none;\'' : '')} disabled>${doStayAtSelfStudyIsNull ? '<span style="color: red;font-style: italic;">[Unknow]</span>&nbsp;' : ''}Self Study
 		  	</div>
 			</li>`;
 			matched_count++;
