@@ -1,0 +1,24 @@
+title: "idad-wind-home"
+tagline: ""
+description: "Blog of Idad Wind"
+github_username: idadwind1
+email: idadwind@gmail.com
+
+plugins:
+  - jemoji
+  - jekyll-sitemap
+  - jekyll-seo-tag
+  - jemoji
+
+sass:
+  style: compressed
+
+highlighter: rouge
+
+header_pages:
+  - index.md
+  - cn.md
+  - en.md
+
+# set the size of the text to 'large' or 'small', default is small
+font-size: small
