@@ -8,8 +8,45 @@
     {{ site.title }}{% endif %}
   </title>
   <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
+  <link rel="stylesheet" href="{{ '/assets/css/tables.css' | relative_url }}">
   <script type="text/javascript" src="{{ page.js_file | relative_url }}"></script>
+  <!-- Mermaid -->
+  <script src="https://unpkg.com/mermaid@11.1.1/dist/mermaid.min.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", (event) => {
+      mermaid.initialize({
+          "theme": "base",
+          "themeVariables": {
+              "primaryColor": "#494a4e",
+              "primaryBorderColor": "#ffb3ba",
+              "secondaryColor": "#909195",
+              "secondaryBorderColor": "#bae1ff",
+              "tertiaryColor": "#b8b9bd",
+              "tertiaryBorderColor": "#baffc9",
+              "primaryTextColor": "#ffb3ba",
+              "secondaryTextColor": "#bae1ff",
+              "tertiaryTextColor": "#baffc9",
+              "pie1": "#ffb3ba",
+              "pie2": "#f6c2ae",
+              "pie3": "#fff1c5",
+              "pie4": "#baffc9",
+              "pie5": "#bae1ff",
+              "pie6": "#f1cbff",
+              "pie7": "#ffb3ba",
+              "pie8": "#f6c2ae",
+              "pie9": "#fff1c5",
+              "pie10": "#baffc9",
+              "pie11": "#bae1ff",
+              "pie12": "#f1cbff",
+              "pieSectionTextColor": "#111",
+              "background": "black"
+          }
+      });
+      window.mermaid.init(undefined, document.querySelectorAll('.language-mermaid'));
+    });
+  </script>  
 
   {% seo %}
 
 </head>
+ 

@@ -8,12 +8,9 @@ plugins:
   - jemoji
   - jekyll-sitemap
   - jekyll-seo-tag
-  - jemoji
 
 sass:
   style: compressed
-
-highlighter: rouge
 
 header_pages:
   - index.md
@@ -22,3 +19,8 @@ header_pages:
 
 # set the size of the text to 'large' or 'small', default is small
 font-size: small
+
+markdown: kramdown
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
