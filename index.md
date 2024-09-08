@@ -17,7 +17,7 @@ Use the top bar to navigate to Chinese / English index
 ## About Me
 
 Check out my GitHub: [idadwind1](https://www.github.com/idadwind1)
-I mainly make application for *Windows* platform, and sometimes do web-dev
+I mainly make applications for *Windows* platform, and sometimes do web-dev
 I mostly use C# as programming language
 
 ## About The Site
