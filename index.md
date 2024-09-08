@@ -23,3 +23,6 @@ I mostly use C# as programming language
 ## About The Site
 
 The site is built with [Jekyll](https://jekyllrb.com/), hosted on [GitHub Pages](https://pages.github.com/). The name of the theme is [jekyll-shell-theme](https://github.com/itstorque/jekyll-shell-theme)
+
+## Yuuri (site icon)
+<img width="200px" src="{{ "/assets/favicon.png" | relative_url}}" alt="yuuri" />

@@ -408,13 +408,16 @@ catch (Exception ex){
 你很快就修好了前端的代码，同时A也写好了接口，但是此时你们发现一个问题：
 
 - A电脑上的版本缺少你当天修改的前端接口，你电脑上同时也缺少A刚写出来的接口
-- 可以直接合并新的文件，但是不确定修改了那些（有若干个被修改的
-- 直接拷贝覆盖，有一方的新代码就会被覆盖
-这里描述的冲突如图：
-![Conflict](..\assets\Pasted image 20240830225650.png)
-两方都有新的文件，而且不能确定哪些是新增的，所有文件都混在一起
 
-但如果是使用的Git进行开发，可以直接合并两个分支，假设A的版本叫patch-1，我的分支叫patch-2，那么只需要几行指令就可以了：
+- 可以直接合并新的文件，但是不确定修改了那些（有若干个被修改的
+
+- 直接拷贝覆盖，有一方的新代码就会被覆盖
+  这里描述的冲突如图：
+  ![Conflict](..\assets\Pasted image 20240830225650.png)
+
+  两方都有新的文件，而且不能确定哪些是新增的，所有文件都混在一起
+
+但如果是使用的Git进行开发，可以直接合并两个分支，假设A的版本叫patch-1，你的分支叫patch-2，那么只需要几行指令就可以了：
 ```bash
 git checkout main    # Checkout主分支，也就是未修改的版本
 git merge patch-1    # 合并两个分支，并进行一次commit，会自动进行合并
@@ -426,18 +429,22 @@ git push origin main # 将新的main推送到存储库
 
 ```mermaid
 gitGraph
-	commit
-	commit
+	commit id: "之前的提交"
+	commit id: "之前的提交2"
 	branch patch-1
 	checkout patch-1
-	commit
+	commit id: "新增接口的提交（A"
 	checkout main
-	commit
-	merge patch-1
-	commit
+	branch patch-2
+	checkout patch-2
+	commit id: "修改前端的提交（你"
+	checkout main
+	merge patch-1 id: "合并（A的分支"
+	merge patch-2 id: "合并（你的分支"
+	commit id: "之后的提交"
 ```
 
-*patch-1是A的分支，main是我的分支*
+*patch-1是A的分支，patch-2是你的分支*
 
 如上文提到的，可以用[Git](https://git-scm.com/)这个工具进行版本控制，然后快速实现合并的操作
 
@@ -446,7 +453,7 @@ gitGraph
 ---
 
 ## 总结
-在写好一个程序这个问题上，初阶（代码层面）的规范编写和高阶（程序层面）的规范编写同样重要，如果两部分都能达到相应的要求，就能写好一个程序
+在写好一个程序这个问题上，代码层面的规范编写和程序层面的规范编写同样重要，如果两部分都能达到相应的要求，就能写好一个程序
 
 ## 参考文献
 - [Naming convention (programming) - Wikipedia](https://en.wikipedia.org/wiki/Naming_convention_(programming))

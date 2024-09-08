@@ -9,6 +9,7 @@
   </title>
   <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
   <link rel="stylesheet" href="{{ '/assets/css/tables.css' | relative_url }}">
+  <link rel="icon" type="image/x-icon" href="{{ '/assets/favicon.png' | relative_url }}">
   <script type="text/javascript" src="{{ page.js_file | relative_url }}"></script>
   <!-- Mermaid -->
   <script src="https://unpkg.com/mermaid@11.1.1/dist/mermaid.min.js"></script>
@@ -17,34 +18,60 @@
       mermaid.initialize({
           "theme": "base",
           "themeVariables": {
-              "primaryColor": "#494a4e",
-              "primaryBorderColor": "#ffb3ba",
-              "secondaryColor": "#909195",
-              "secondaryBorderColor": "#bae1ff",
-              "tertiaryColor": "#b8b9bd",
-              "tertiaryBorderColor": "#baffc9",
-              "primaryTextColor": "#ffb3ba",
-              "secondaryTextColor": "#bae1ff",
+              "primaryColor": "#ffb3ba",
+              "primaryBorderColor": "#111",
+              "primaryTextColor": "#111",
+              "secondaryColor": "#bae1ff",
+              "secondaryBorderColor": "#111",
+              "secondaryTextColor": "#111",
+              "tertiaryColor": "#baffc9",
+              "tertiaryBorderColor": "#111",
               "tertiaryTextColor": "#baffc9",
+              "nodeTextColor": "#111",
+              "nodeBorder": "#111",
               "pie1": "#ffb3ba",
+              "git0": "#ffb3ba",
+              "gitBranchLabel0": "black",
               "pie2": "#f6c2ae",
+              "git1": "#f6c2ae",
+              "gitBranchLabel1": "black",
               "pie3": "#fff1c5",
+              "git2": "#fff1c5",
+              "gitBranchLabel2": "black",
               "pie4": "#baffc9",
+              "git3": "#baffc9",
+              "gitBranchLabel3": "black",
               "pie5": "#bae1ff",
+              "git4": "#bae1ff",
+              "gitBranchLabel4": "black",
               "pie6": "#f1cbff",
+              "git5": "#f1cbff",
+              "gitBranchLabel5": "black",
               "pie7": "#ffb3ba",
+              "git6": "gray",
+              "gitBranchLabel6": "pink",
               "pie8": "#f6c2ae",
+              "git7": "white",
+              "gitBranchLabel7": "black",
               "pie9": "#fff1c5",
               "pie10": "#baffc9",
               "pie11": "#bae1ff",
               "pie12": "#f1cbff",
               "pieSectionTextColor": "#111",
+              "commitLabelBackground": "#111",
+              "commitLabelColor": "white",
+              "tagLabelBackground": "#111",
+              "tagLabelColor": "white",
               "background": "black"
           }
       });
       window.mermaid.init(undefined, document.querySelectorAll('.language-mermaid'));
     });
-  </script>  
+  </script> 
+  <!-- Mathjax -->
+  <script type="text/javascript" async
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+  </script>
 
   {% seo %}
 

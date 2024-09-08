@@ -23,5 +23,5 @@ layout: default
 
 ## 杂项
 没读够？查看更多文章
-- `Misc0x00`:  [如何写好一个程序](misc\write_a_good_program.md) 
-- `Misc0x01`:  [伪代码](misc\pseudocode.md) 
+- `Misc0x00`:  [如何写好一个程序]({{ "/cn/coding/misc/write_a_good_program" | relative_url }}) 
+- `Misc0x01`:  [伪代码]({{ "/cn/coding/misc/pseudocode" | relative_url }}) 

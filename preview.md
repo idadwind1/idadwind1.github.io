@@ -29,6 +29,8 @@ Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu 
 2. Ordered List Item 1
 3. Ordered List Item 1
 
+![yuuri](/assets/favicon.png)
+
 ```c
 #include<stdio.h>
 void quicksort(int number[25],int first,int last){
@@ -133,6 +135,49 @@ public class Armstrong {
 
 `1`
 
-
+```mermaid
+    gitGraph
+    commit
+    branch hotfix
+    checkout hotfix
+    commit
+    branch develop
+    checkout develop
+    commit id:"ash" tag:"abc"
+    branch featureB
+    checkout featureB
+    commit type:HIGHLIGHT
+    checkout main
+    checkout hotfix
+    commit type:NORMAL
+    checkout develop
+    commit type:REVERSE
+    checkout featureB
+    commit
+    checkout main
+    merge hotfix
+    checkout featureB
+    commit
+    checkout develop
+    branch featureA
+    commit
+    checkout develop
+    merge hotfix
+    checkout featureA
+    commit
+    checkout featureB
+    commit
+    checkout develop
+    merge featureA
+    branch release
+    checkout release
+    commit
+    checkout main
+    commit
+    checkout release
+    merge main
+    checkout develop
+    merge release
+```
 
 $$f(x) = 1$$

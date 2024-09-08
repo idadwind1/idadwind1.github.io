@@ -9,6 +9,6 @@ title: English Index
 
 All English blogs:
 
-- **Programming**
+- **Computer Stuff**
 - **Language Learning**
 
