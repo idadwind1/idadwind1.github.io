@@ -1,0 +1,20 @@
+<div id="sticker_div" style="display: none;">
+  <a id="sticker_link">
+    <figure>
+      <img id="sticker" height="150" title="sticker" class="no-lightbox" />
+      <figcaption style="color: #9e9e9e; font-size: 12px" id="sticker_path"></figcaption>
+    </figure>
+  </a>
+</div>
+<script>
+  // Choose a random sticker
+  fetch("/assets/stickers/files.json")
+    .then((response) => response.json())
+    .then((files) => {
+      const file = files[Math.floor(Math.random() * files.length)];
+      console.log(file);
+      document.getElementById('sticker_link').href = document.getElementById('sticker').src = file.path;
+      document.getElementById('sticker_path').textContent = file.relative;
+      document.getElementById('sticker_div').style.display = '';
+    })
+</script>

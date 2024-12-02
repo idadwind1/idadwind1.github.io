@@ -17,6 +17,9 @@ header_pages:
   - cn.md
   - en.md
 
+exclude:
+  - assets/stickers/structure.py
+
 # set the size of the text to 'large' or 'small', default is small
 font-size: small
 
