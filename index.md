@@ -8,17 +8,18 @@ detail_image: assets/theme_logo.svg
 
 # Idad Wind's Blog
 
-***⚠️⚠️THE SITE IS STILL UNDER CONSTRUCTION, BLOGS ARE NOT UPLOADING YET⚠️⚠️***
+***⚠️⚠️THIS SITE IS STILL UNDER CONSTRUCTION, BLOGS ARE NOT UPLOADED YET⚠️⚠️***
 
-Welcome to **the blog of Idad Wind**, where I stores my writings
+Welcome to **the blog of Idad Wind**, where I store my writings
 I assemble what i know, including **programming**, **language learning**, and other stuffs, into tutorials, and then place them here
 Use the top bar to navigate to Chinese / English index
 
 ## About Me
 
 Check out my GitHub: [idadwind1](https://www.github.com/idadwind1)
-I mainly make applications for *Windows* platform, and sometimes do web-dev
-I mostly use C# as programming language
+I mainly make *Windows* window applications and *Linux* CLIs, and sometimes do web-dev
+I mostly use C#, python, C++ as programming language
+I use Linux as my main OS
 
 ## About The Site
 
